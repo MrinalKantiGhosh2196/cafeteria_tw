@@ -1,0 +1,3 @@
+enum MenuItemEvents {
+  like, dislike
+}
