@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cafeteria_tw/widget/build_icon_button.dart';
 import 'package:cafeteria_tw/model/menu_item_events.dart';
-
+import 'package:cafeteria_tw/model/push_notification.dart';
 
 class MenuItem extends StatefulWidget{
   final String _menuItem;
@@ -53,11 +53,13 @@ class _MenuItemState extends State<MenuItem>{
       setState(() {
         isLiked = !isLiked;
         isDisliked = false;
+        new PushNotification(context).showNotification("Like notify", "${widget._menuItem} has been liked recently");
       });
     } else {
       setState(() {
         isDisliked = !isDisliked;
         isLiked = false;
+        new PushNotification(context).showNotification("Dislike notify", "${widget._menuItem} has been disliked recently");
       });
     }
   }
