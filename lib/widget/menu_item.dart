@@ -53,13 +53,15 @@ class _MenuItemState extends State<MenuItem>{
       setState(() {
         isLiked = !isLiked;
         isDisliked = false;
-        new PushNotification(context).showNotification("Like notify", "${widget._menuItem} has been liked recently");
+        if(isLiked)
+          new PushNotification(context).showNotification("Like notify", "${widget._menuItem} has been liked recently");
       });
     } else {
       setState(() {
         isDisliked = !isDisliked;
         isLiked = false;
-        new PushNotification(context).showNotification("Dislike notify", "${widget._menuItem} has been disliked recently");
+        if(isDisliked)
+          new PushNotification(context).showNotification("Dislike notify", "${widget._menuItem} has been disliked recently");
       });
     }
   }

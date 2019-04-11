@@ -27,6 +27,13 @@ class Homepage extends StatelessWidget {
             new Row(
               children: <Widget>[
                 new MaterialButton(
+                  child: new Text(
+                    "Github",
+                    style: Style.paragraphWhite,
+                  ),
+                  onPressed: () => Navigator.pushNamed(context, '/webviewForGithub'),
+                ),
+                new MaterialButton(
                     child: new Text(
                       ConstantText.adminLoginText,
                       style: Style.paragraphWhite,

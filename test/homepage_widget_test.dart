@@ -43,13 +43,21 @@ void main() {
     AppBar appBar = tester.firstWidget(find.byType(AppBar));
     Row appBarRow = appBar.title;
     Text appBarTitleText = appBarRow.children[0];
-    MaterialButton materialButton = appBarRow.children[1];
+    Row row = appBarRow.children[1];
+    MaterialButton materialButtonForWebview = row.children[0];
+    Text buttonTextForWebview = materialButtonForWebview.child;
+    MaterialButton materialButton = row.children[1];
     Text buttonText = materialButton.child;
+    IconButton iconButton = row.children[2];
+    Icon icon = iconButton.icon;
 
     expect(appBarTitleText.data, "TW Cafeteria");
     expect(appBarRow.mainAxisAlignment, MainAxisAlignment.spaceBetween);
+    expect(buttonTextForWebview.data, "Github");
+    expect(buttonTextForWebview.style, Style.paragraphWhite);
     expect(buttonText.data, "Admin Login");
     expect(buttonText.style, Style.paragraphWhite);
+    expect(icon.icon, Icons.camera);
   });
 
   testWidgets("should have breakfast, lunch and snacks tabbar", (WidgetTester tester) async{

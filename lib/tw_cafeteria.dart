@@ -4,7 +4,7 @@ import 'package:cafeteria_tw/service/time_provider_service.dart';
 import 'package:cafeteria_tw/widget/login_page.dart';
 import 'package:cafeteria_tw/constants/constant_texts.dart';
 import 'package:cafeteria_tw/widget/image_loader.dart';
-
+import 'widget/webview_implementation.dart';
 
  class TwCafeteria extends StatelessWidget {
   @override
@@ -18,7 +18,8 @@ import 'package:cafeteria_tw/widget/image_loader.dart';
       routes: {
         '/' : (context) => new Homepage(new TimeProvider()),
         '/login' : (context) => new LoginPage(),
-        '/imageLoad' : (context) => ImageLoader()
+        '/imageLoad' : (context) => ImageLoader(),
+        '/webviewForGithub' : (context) => WebviewImplementation("Github")
       },
     );
   }
