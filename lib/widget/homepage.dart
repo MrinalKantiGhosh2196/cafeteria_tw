@@ -33,16 +33,20 @@ class Homepage extends StatelessWidget {
                   ),
                   onPressed: () => Navigator.pushNamed(context, '/webviewForGithub'),
                 ),
-                new MaterialButton(
-                    child: new Text(
-                      ConstantText.adminLoginText,
-                      style: Style.paragraphWhite,
-                    ),
-                    onPressed: () => Navigator.pushNamed(context, "/login")
-                ),
+//                new MaterialButton(
+//                    child: new Text(
+//                      ConstantText.adminLoginText,
+//                      style: Style.paragraphWhite,
+//                    ),
+//                    onPressed: () => Navigator.pushNamed(context, "/login")
+//                ),
                 new IconButton(
                   icon: Icon(Icons.camera),
                   onPressed: () => Navigator.pushNamed(context, "/imageLoad")
+                ),
+                new IconButton(
+                    icon: Icon(Icons.map),
+                    onPressed: () => Navigator.pushNamed(context, "/map")
                 )
               ],
             )

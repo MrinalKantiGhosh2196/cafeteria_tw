@@ -5,6 +5,7 @@ import 'package:cafeteria_tw/widget/login_page.dart';
 import 'package:cafeteria_tw/constants/constant_texts.dart';
 import 'package:cafeteria_tw/widget/image_loader.dart';
 import 'widget/webview_implementation.dart';
+import 'widget/maps.dart';
 
  class TwCafeteria extends StatelessWidget {
   @override
@@ -19,7 +20,8 @@ import 'widget/webview_implementation.dart';
         '/' : (context) => new Homepage(new TimeProvider()),
         '/login' : (context) => new LoginPage(),
         '/imageLoad' : (context) => ImageLoader(),
-        '/webviewForGithub' : (context) => WebviewImplementation("Github")
+        '/webviewForGithub' : (context) => WebviewImplementation("Github"),
+        '/map': (context) => new MyMaps()
       },
     );
   }

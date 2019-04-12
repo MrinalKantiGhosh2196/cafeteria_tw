@@ -4,6 +4,14 @@ PODS:
   - Flutter (1.0.0)
   - flutter_local_notifications (0.0.1):
     - Flutter
+  - google_maps_flutter (0.0.1):
+    - Flutter
+    - GoogleMaps
+  - GoogleMaps (2.7.0):
+    - GoogleMaps/Maps (= 2.7.0)
+  - GoogleMaps/Base (2.7.0)
+  - GoogleMaps/Maps (2.7.0):
+    - GoogleMaps/Base
   - image_picker (0.0.1):
     - Flutter
   - path_provider (0.0.1):
@@ -15,9 +23,14 @@ DEPENDENCIES:
   - esys_flutter_share (from `.symlinks/plugins/esys_flutter_share/ios`)
   - Flutter (from `.symlinks/flutter/ios`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
+  - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - webview_flutter (from `.symlinks/plugins/webview_flutter/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GoogleMaps
 
 EXTERNAL SOURCES:
   esys_flutter_share:
@@ -26,6 +39,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/flutter/ios"
   flutter_local_notifications:
     :path: ".symlinks/plugins/flutter_local_notifications/ios"
+  google_maps_flutter:
+    :path: ".symlinks/plugins/google_maps_flutter/ios"
   image_picker:
     :path: ".symlinks/plugins/image_picker/ios"
   path_provider:
@@ -37,6 +52,8 @@ SPEC CHECKSUMS:
   esys_flutter_share: 403498dab005b36ce1f8d7aff377e81f0621b0b4
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
   flutter_local_notifications: 9e4738ce2471c5af910d961a6b7eadcf57c50186
+  google_maps_flutter: 924970f41ec509a201b593548db005efb2a09ee9
+  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
   image_picker: a211f28b95a560433c00f5cd3773f4710a20404d
   path_provider: f96fff6166a8867510d2c25fdcc346327cc4b259
   webview_flutter: 1aa7604e6cdb451a9b7ed2c37d5454c0b440246b
