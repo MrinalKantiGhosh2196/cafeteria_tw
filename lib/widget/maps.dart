@@ -8,23 +8,20 @@ class MyMaps extends StatefulWidget {
 }
 
 class MyMapsState extends State<MyMaps> {
-  GoogleMapController myController;
+  GoogleMapController mapController;
+  CameraPosition cameraPosition = new CameraPosition(
+    target: LatLng(37.42796133580664, -122.085749655962),
+    zoom: 14.4746
+  );
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500,
-      width: double.infinity,
-    child: GoogleMap(
-      onMapCreated: (controller){
-        setState(() {
-          myController =  controller;
-        });
+    return GoogleMap(
+      initialCameraPosition: cameraPosition,
+      compassEnabled: true,
+      onMapCreated: (controller) {
+        mapController = controller;
       },
-      initialCameraPosition: CameraPosition(target: LatLng(20.5937, 78.9629,), zoom: 11.0),
-      zoomGesturesEnabled: true,
-      myLocationEnabled: true,
-
-    ),
     );
   }
 }
