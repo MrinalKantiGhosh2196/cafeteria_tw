@@ -32,6 +32,10 @@
     <string>app needs access to the camera</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>app needs access to the microphone, if you intend to record videos</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>app needs your current location</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>app needs your location to detect changes</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
