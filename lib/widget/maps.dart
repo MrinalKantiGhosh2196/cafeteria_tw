@@ -27,16 +27,24 @@ class MyMapsState extends State<MyMaps> {
   @override
   Widget build(BuildContext context) {
     if(currentLocation != null){
+      Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
+      MarkerId markerId  = MarkerId("1");
+      Marker marker  =  Marker(
+          markerId: markerId,
+          position: LatLng(currentLocation.latitude, currentLocation.longitude),
+      );
+      markers[markerId] = marker;
       return GoogleMap(
-        initialCameraPosition: new CameraPosition(
+         initialCameraPosition: new CameraPosition(
             target: LatLng(currentLocation.latitude, currentLocation.longitude),
             zoom: 14.4746
         ),
         compassEnabled: true,
+        markers: Set<Marker>.of(markers.values),
         onMapCreated: (controller) {
           mapController = controller;
         },
-        markers: ,
+
       );
     } else{
       return Scaffold();
