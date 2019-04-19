@@ -21,9 +21,9 @@ class Homepage extends StatelessWidget {
           title: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            new Text(
-              ConstantText.appTitle,
-            ),
+//            new Text(
+//              ConstantText.appTitle,
+//            ),
             new Row(
               children: <Widget>[
                 new MaterialButton(
@@ -47,6 +47,10 @@ class Homepage extends StatelessWidget {
                 new IconButton(
                     icon: Icon(Icons.map),
                     onPressed: () => Navigator.pushNamed(context, "/map")
+                ),
+                new IconButton(
+                    icon: Icon(Icons.sms),
+                    onPressed: () => Navigator.pushNamed(context, "/smsReader")
                 )
               ],
             )
