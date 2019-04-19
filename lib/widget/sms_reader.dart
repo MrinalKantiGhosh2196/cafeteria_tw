@@ -42,9 +42,20 @@ class _MySmsReceiverState extends State<MySmsReceiver> {
               child: Text("Start Listening"),
               onPressed: _startListening,
             ),
+            RaisedButton(
+              child: Text("Send Message"),
+              onPressed: _sendMessage,
+            ),
+            
           ],
         ),
       ),
     );
+  }
+
+  void _sendMessage() {
+    SmsSender sender = new SmsSender();
+    String address = "9886765684";
+    sender.sendSms(new SmsMessage(address, 'Hello flutter!'));
   }
 }
