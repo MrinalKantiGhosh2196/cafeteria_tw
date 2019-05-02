@@ -1,6 +1,7 @@
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:location/location.dart';
 
 class MyMaps extends StatefulWidget {
   @override
@@ -10,17 +11,17 @@ class MyMaps extends StatefulWidget {
 
 class MyMapsState extends State<MyMaps> {
   GoogleMapController mapController;
-
   var currentLocation;
+  Location location = new Location();
 
-  void initState(){
+  @override
+  void initState() {
     super.initState();
-    Geolocator().getCurrentPosition().then((currentLoc){
+    location.getLocation().then((currentLoc) {
       setState(() {
-        currentLocation =  currentLoc;
+        currentLocation = currentLoc;
       });
     });
-
   }
 
 

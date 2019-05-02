@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 
 class SignInPage extends StatelessWidget{
   @override
@@ -18,29 +16,14 @@ class SignInPage extends StatelessWidget{
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                 child: new RaisedButton(
                   key: Key("loginButton"),
-                  child: new Text("Login With Facebook"),
+                  child: new Text("LoginWithFacebook"),
                   animationDuration: new Duration(microseconds: 1),
-                  onPressed: () => _signInWithFacebook(context)
+                  onPressed: null,
                 ))
           ],
         ),
       )
     );
-  }
-
-  _signInWithFacebook(context) async{
-    FacebookLogin fbLogin = new FacebookLogin();
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    final facebookLoginResult = await fbLogin
-        .logInWithReadPermissions(['email', 'public_profile']);
-    FacebookAccessToken myToken = facebookLoginResult.accessToken;
-    AuthCredential credential= FacebookAuthProvider.getCredential(accessToken: myToken.token);
-    final FirebaseUser user = await _auth.signInWithCredential(credential);
-   if(user != null){
-     Navigator.of(context).pushReplacementNamed("/home");
-   } else{
-     Navigator.of(context).pushReplacementNamed('/');
-   }
   }
 
 }
