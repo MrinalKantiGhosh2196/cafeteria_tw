@@ -1,3 +1,4 @@
+import 'package:cafeteria_tw/widget/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cafeteria_tw/widget/homepage.dart';
 import 'package:cafeteria_tw/service/time_provider_service.dart';
@@ -7,7 +8,6 @@ import 'package:cafeteria_tw/widget/image_loader.dart';
 import 'widget/webview_implementation.dart';
 import 'widget/maps.dart';
 import 'widget/sms_reader.dart';
-import 'widget/sign_in_page.dart';
 
  class TwCafeteria extends StatelessWidget {
   @override
@@ -20,6 +20,7 @@ import 'widget/sign_in_page.dart';
       initialRoute: '/',
       routes: {
         '/' : (context) => new SignInPage(),
+        '/home' : (context) => new Homepage(new TimeProvider()),
         '/login' : (context) => new LoginPage(),
         '/imageLoad' : (context) => ImageLoader(),
         '/webviewForGithub' : (context) => WebviewImplementation("Github"),
