@@ -7,6 +7,7 @@ import 'package:cafeteria_tw/widget/image_loader.dart';
 import 'widget/webview_implementation.dart';
 import 'widget/maps.dart';
 import 'widget/sms_reader.dart';
+import 'widget/sign_in_page.dart';
 
  class TwCafeteria extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ import 'widget/sms_reader.dart';
       ),
       initialRoute: '/',
       routes: {
-        '/' : (context) => new Homepage(new TimeProvider()),
+        '/' : (context) => new SignInPage(),
         '/login' : (context) => new LoginPage(),
         '/imageLoad' : (context) => ImageLoader(),
         '/webviewForGithub' : (context) => WebviewImplementation("Github"),
