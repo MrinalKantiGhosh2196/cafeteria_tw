@@ -1,3 +1,4 @@
+import 'package:cafeteria_tw/widget/sign_in_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cafeteria_tw/widget/homepage.dart';
 import 'package:cafeteria_tw/service/time_provider_service.dart';
@@ -18,7 +19,8 @@ import 'widget/sms_reader.dart';
       ),
       initialRoute: '/',
       routes: {
-        '/' : (context) => new Homepage(new TimeProvider()),
+        '/' : (context) => new SignInPage(),
+        '/home' : (context) => new Homepage(new TimeProvider()),
         '/login' : (context) => new LoginPage(),
         '/imageLoad' : (context) => ImageLoader(),
         '/webviewForGithub' : (context) => WebviewImplementation("Github"),
