@@ -7,6 +7,7 @@ import 'package:local_auth/local_auth.dart';
 class SignInPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
+    _startAuthentication(context);
     return new Scaffold(
       appBar: new AppBar(
         elevation: 0,
@@ -21,13 +22,6 @@ class SignInPage extends StatelessWidget{
               child: FacebookSignInButton(
                   onPressed: () => _signInWithFacebook(context)
               )
-            ),
-            new Padding(padding: EdgeInsets.only(top: 30)),
-            new Padding(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-              child: MaterialButton(
-                  child: Icon(Icons.fingerprint, size: 200),
-                  onPressed: () => _startAuthentication(context)),
             )
           ],
         ),
@@ -51,15 +45,13 @@ class SignInPage extends StatelessWidget{
   }
 
   _startAuthentication(BuildContext context) async{
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tapped ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    //print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tapped ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     try{
       var localAuth = new LocalAuthentication();
       bool didAuthenticate = await localAuth.authenticateWithBiometrics(
           localizedReason: 'Please authenticate to show account balance');
       if(didAuthenticate){
         Navigator.of(context).pushReplacementNamed("/home");
-      } else{
-        Navigator.of(context).pushReplacementNamed('/');
       }
     } catch (e) {
       print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ${e.toString()} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
