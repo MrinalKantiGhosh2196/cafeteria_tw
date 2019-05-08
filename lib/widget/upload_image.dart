@@ -42,7 +42,6 @@ class _UploadImageState extends State<UploadImage> {
 
   Future shareImage(String text) async {
     final ByteData bytes = await rootBundle.load(widget._image.path);
-    print("--------------- ${widget._image.path} ------------------");
     await Share.file('food item' , 'food.png', bytes.buffer.asUint8List(), 'image/png');
   }
 

@@ -45,7 +45,6 @@ class SignInPage extends StatelessWidget{
   }
 
   _startAuthentication(BuildContext context) async{
-    //print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Tapped ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     try{
       var localAuth = new LocalAuthentication();
       bool didAuthenticate = await localAuth.authenticateWithBiometrics(

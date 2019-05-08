@@ -21,9 +21,9 @@ class Homepage extends StatelessWidget {
           title: new Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-//            new Text(
-//              ConstantText.appTitle,
-//            ),
+            new Text(
+              ConstantText.appTitle,
+            ),
             new Row(
               children: <Widget>[
                 new MaterialButton(
@@ -33,13 +33,6 @@ class Homepage extends StatelessWidget {
                   ),
                   onPressed: () => Navigator.pushNamed(context, '/webviewForGithub'),
                 ),
-//                new MaterialButton(
-//                    child: new Text(
-//                      ConstantText.adminLoginText,
-//                      style: Style.paragraphWhite,
-//                    ),
-//                    onPressed: () => Navigator.pushNamed(context, "/login")
-//                ),
                 new IconButton(
                   icon: Icon(Icons.camera),
                   onPressed: () => Navigator.pushNamed(context, "/imageLoad")
