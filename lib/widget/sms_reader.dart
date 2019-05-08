@@ -7,19 +7,23 @@ class MySmsReceiver extends StatefulWidget {
 }
 
 class _MySmsReceiverState extends State<MySmsReceiver> {
-  List<String> receivedMessages = [];
-  List<String> _smsAddress = [];
+  String receivedMessages;
+  String _smsAddress;
+
+  @override
+  void initState() {
+    super.initState();
+    _startListening();
+  }
 
 
 
   void _startListening() {
     SmsReceiver receiver = SmsReceiver();
     receiver.onSmsReceived.listen((SmsMessage msg) {
-      print(receivedMessages.toString());
-      print(_smsAddress.toString());
       setState(() {
-        receivedMessages.add(msg.body);
-        _smsAddress.add(msg.address);
+        receivedMessages = msg.body;
+        _smsAddress = msg.address;
       });
     });
   }
@@ -36,11 +40,7 @@ class _MySmsReceiverState extends State<MySmsReceiver> {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               alignment: Alignment.center,
-              child: Text(receivedMessages.toString()),
-            ),
-            RaisedButton(
-              child: Text("Start Listening"),
-              onPressed: _startListening,
+              child: _printMessage(),
             ),
             RaisedButton(
               child: Text("Send Message"),
@@ -57,5 +57,12 @@ class _MySmsReceiverState extends State<MySmsReceiver> {
     SmsSender sender = new SmsSender();
     String address = "9886765684";
     sender.sendSms(new SmsMessage(address, 'Hello flutter!'));
+  }
+
+  Widget _printMessage() {
+    if(receivedMessages != null) {
+      return Text(receivedMessages + " from " + _smsAddress);
+    }
+    return Container();
   }
 }
